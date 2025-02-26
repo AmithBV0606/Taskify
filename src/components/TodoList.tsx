@@ -1,13 +1,12 @@
-import { useState } from "react";
 import DeleteButton from "./DeleteButton";
 import { TodoProps } from "../Types/types";
 
-export default function TodoList() {
-  const [initialTodos, SetInitialTodos] = useState<TodoProps[]>([
-    { id: 1, todo: "Buy groceries", isCompleted: false },
-    { id: 2, todo: "Walk the dog", isCompleted: true },
-    { id: 3, todo: "Go to Gym", isCompleted: false },
-  ]);
+export default function TodoList({ initialTodos, SetInitialTodos }) {
+  // const [initialTodos, SetInitialTodos] = useState<TodoProps[]>([
+  //   { id: 1, todo: "Buy groceries", isCompleted: false },
+  //   { id: 2, todo: "Walk the dog", isCompleted: true },
+  //   { id: 3, todo: "Go to Gym", isCompleted: false },
+  // ]);
 
   const handleStatusChange = (todo: TodoProps) => {
     // SetInitialTodos(
