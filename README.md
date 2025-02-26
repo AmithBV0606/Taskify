@@ -48,3 +48,5 @@ export default {
 - We need to lift the "Todos" state up into it's parent component i.e "App" component, so that the "Todos" state can be passed down to it's children components i.e "Header", "TodoList" and "Sidebar" component.
 
 <img src="./assets/Pic-2.png" /> 
+
+**Note :** When you have a button inside a form, the type of the button is automatically set to "submit".

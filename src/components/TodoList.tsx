@@ -1,7 +1,7 @@
 import DeleteButton from "./DeleteButton";
 import { TodoProps } from "../Types/types";
 
-export default function TodoList({ initialTodos, SetInitialTodos }) {
+export default function TodoList({ initialTodos, handleToggleTodo, handleDeleteTodo }) {
   // const [initialTodos, SetInitialTodos] = useState<TodoProps[]>([
   //   { id: 1, todo: "Buy groceries", isCompleted: false },
   //   { id: 2, todo: "Walk the dog", isCompleted: true },
@@ -14,23 +14,31 @@ export default function TodoList({ initialTodos, SetInitialTodos }) {
     //     t.id === todo.id ? { ...t, isCompleted: !t.isCompleted } : t
     //   )
     // );
-    SetInitialTodos(
-      initialTodos.map((t) => {
-        if (t.id === todo.id) {
-          return { ...t, isCompleted: !t.isCompleted };
-        }
+    // setInitialTodos(
+    //   initialTodos.map((t) => {
+    //     if (t.id === todo.id) {
+    //       return { ...t, isCompleted: !t.isCompleted };
+    //     }
 
-        return t;
-      })
-    );
+    //     return t;
+    //   })
+    // );
+    handleToggleTodo(todo.id);
   };
 
-  const handleDelete = (todo: TodoProps) => {
-    SetInitialTodos(initialTodos.filter((t) => t.id !== todo.id));
-  };
+  // const handleDelete = (todo: TodoProps) => {
+  //   setInitialTodos(initialTodos.filter((t) => t.id !== todo.id));
+  // };
 
   return (
     <ul>
+      {/* Using && instead of ternary is called as "Short-Circuiting" */}
+      {initialTodos.length === 0 && (
+        <li className="h-full flex justify-center items-center font-bold text-xl">
+          Start by adding a task
+        </li>
+      )}
+
       {initialTodos.map((todo: TodoProps) => (
         <li
           className="flex justify-between items-center px-8 h-[50px] text-[14px] border-b border-black/[8%]"
@@ -44,11 +52,11 @@ export default function TodoList({ initialTodos, SetInitialTodos }) {
           >
             {todo.todo}
           </span>
-          <DeleteButton onClick={() => handleDelete(todo)} />
+          {/* <DeleteButton onClick={() => handleDelete(todo)} /> */}
 
           {/* <button onClick={() => handleDelete(todo)}>❌</button> */}
-          
-          {/* <DeleteButton id={todo.id} setInitialTodos={SetInitialTodos} /> */}
+
+          <DeleteButton id={todo.id} handleDeleteTodo={handleDeleteTodo} />
         </li>
       ))}
     </ul>
