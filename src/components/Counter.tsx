@@ -1,13 +1,14 @@
-export default function Counter({ initialTodos }) {
+import { DerivedStateProps } from "../Types/types";
+
+
+export default function Counter({
+  totalNumberOfTodos,
+  numberOfCompletedTodos,
+}: DerivedStateProps) {
   return (
     <p>
-      <b className="font-bold">
-        {initialTodos.reduce(
-          (acc, todo) => acc + (todo.isCompleted ? 1 : 0),
-          0
-        )}
-      </b>{" "}
-      / {initialTodos.length} tasks completed
+      <b className="font-bold">{numberOfCompletedTodos}</b> /{" "}
+      {totalNumberOfTodos} tasks completed
     </p>
   );
 }

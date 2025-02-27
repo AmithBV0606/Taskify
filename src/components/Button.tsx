@@ -1,9 +1,4 @@
-import React from "react";
-
-type ButtonProps = {
-  buttonType?: string;
-  children: React.ReactNode;
-};
+import { ButtonProps } from "../Types/types";
 
 export default function Button({ buttonType, children }: ButtonProps) {
   // const { buttonType, children } = props;

@@ -1,7 +1,7 @@
 import DeleteButton from "./DeleteButton";
-import { TodoProps } from "../Types/types";
+import { TodoListProps, TodoProps } from "../Types/types";
 
-export default function TodoList({ initialTodos, handleToggleTodo, handleDeleteTodo }) {
+export default function TodoList({ initialTodos, handleToggleTodo, handleDeleteTodo }: TodoListProps) {
   // const [initialTodos, SetInitialTodos] = useState<TodoProps[]>([
   //   { id: 1, todo: "Buy groceries", isCompleted: false },
   //   { id: 2, todo: "Walk the dog", isCompleted: true },
