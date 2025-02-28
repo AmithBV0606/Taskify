@@ -20,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           ? "https://taskify-alpha-ivory.vercel.app"
           : "http://localhost:5173"
       }
+      isDangerouslyUseLocalStorage={true}
     >
       <TodosContextProvider>
         <App />
