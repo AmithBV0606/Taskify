@@ -5,6 +5,7 @@ export type TodoProps = {
 };
 
 export type ButtonProps = {
+  onClick: () => Promise<void>;
   buttonType?: "primary" | "secondary";
   children: React.ReactNode;
 };
