@@ -6,11 +6,10 @@
 //   );
 // }
 
-import { DeleteButtonProps } from "../Types/types";
+import { useTodosContext } from "../hooks/useTodosContext";
 
-export default function DeleteButton({
-  id,
-  handleDeleteTodo,
-}: DeleteButtonProps) {
+export default function DeleteButton({ id }: { id: number }) {
+  const { handleDeleteTodo } = useTodosContext();
+
   return <button onClick={() => handleDeleteTodo(id)}>❌</button>;
 }

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Button from "./Button";
-import { handleAddTodoType } from "../Types/types";
+import { useTodosContext } from "../hooks/useTodosContext";
 
 // export default function AddTodoForm(props: { handleAddTodo: (todoText: string) => void }) {
-export default function AddTodoForm({ handleAddTodo }: handleAddTodoType) {
+export default function AddTodoForm() {
   const [todoText, setTodoText] = useState("");
+  const { handleAddTodo } = useTodosContext();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

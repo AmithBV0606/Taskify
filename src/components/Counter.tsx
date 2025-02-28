@@ -1,10 +1,8 @@
-import { DerivedStateProps } from "../Types/types";
+import { useTodosContext } from "../hooks/useTodosContext";
 
+export default function Counter() {
+  const { numberOfCompletedTodos, totalNumberOfTodos } = useTodosContext();
 
-export default function Counter({
-  totalNumberOfTodos,
-  numberOfCompletedTodos,
-}: DerivedStateProps) {
   return (
     <p>
       <b className="font-bold">{numberOfCompletedTodos}</b> /{" "}

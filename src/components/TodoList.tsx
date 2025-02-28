@@ -1,7 +1,10 @@
 import DeleteButton from "./DeleteButton";
-import { TodoListProps, TodoProps } from "../Types/types";
+import { TodoProps } from "../Types/types";
+import { useTodosContext } from "../hooks/useTodosContext";
 
-export default function TodoList({ initialTodos, handleToggleTodo, handleDeleteTodo }: TodoListProps) {
+export default function TodoList() {
+  const { initialTodos, handleToggleTodo } = useTodosContext();
+
   // const [initialTodos, SetInitialTodos] = useState<TodoProps[]>([
   //   { id: 1, todo: "Buy groceries", isCompleted: false },
   //   { id: 2, todo: "Walk the dog", isCompleted: true },
@@ -56,7 +59,7 @@ export default function TodoList({ initialTodos, handleToggleTodo, handleDeleteT
 
           {/* <button onClick={() => handleDelete(todo)}>❌</button> */}
 
-          <DeleteButton id={todo.id} handleDeleteTodo={handleDeleteTodo} />
+          <DeleteButton id={todo.id} />
         </li>
       ))}
     </ul>
