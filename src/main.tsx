@@ -10,8 +10,16 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <KindeProvider
       clientId="e561538a968e4e39b37067b7242487dd"
       domain="https://amith.kinde.com"
-      redirectUri="http://localhost:5173"
-      logoutUri="http://localhost:5173"
+      redirectUri={
+        process.env.NODE_ENV === "production"
+          ? "https://taskify-alpha-ivory.vercel.app"
+          : "http://localhost:5173"
+      }
+      logoutUri={
+        process.env.NODE_ENV === "production"
+          ? "https://taskify-alpha-ivory.vercel.app"
+          : "http://localhost:5173"
+      }
     >
       <TodosContextProvider>
         <App />
