@@ -12,12 +12,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       domain="https://amith.kinde.com"
       redirectUri={
         process.env.NODE_ENV === "production"
-          ? "https://taskify101.netlify.app"
+          ? "https://taskify-khaki-six.vercel.app"
           : "http://localhost:5173"
       }
       logoutUri={
         process.env.NODE_ENV === "production"
-          ? "https://taskify101.netlify.app"
+          ? "https://taskify-khaki-six.vercel.app"
           : "http://localhost:5173"
       }
       isDangerouslyUseLocalStorage={true}
